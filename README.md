@@ -1,71 +1,41 @@
 # Loan Default Prediction – Machine Learning Project
 
-This project focuses on predicting whether a loan applicant is likely to **default** or **not default** using machine learning techniques.  
+## Task Objective
 
+The objective was to predict whether a loan applicant would default using a loan dataset.
+The task involved cleaning data, handling missing values, visualizing important features, encoding categories, training models, and evaluating performance.
 
-## Objectives
-- Clean and preprocess loan applicant data  
-- Handle missing values appropriately  
-- Perform exploratory data analysis (EDA)  
-- Train classification models  
-- Evaluate model performance using accuracy and confusion matrix  
+## Approach
 
+### 1. Data Cleaning
+- Dropped extremely sparse + low-importance columns
+- Filled numerical missing values using median
+- Filled categorical missing values using mode
 
-## Data Preprocessing
-- Dropped sparse and low-importance columns  
-- Filled missing numerical values using **median**  
-- Filled missing categorical values using **mode**  
-- Encoded all categorical features using **one-hot encoding**  
-- Split the dataset into **train** and **test** sets  
+### 2. Exploratory Data Analysis
+- Visualized loan amount, income, credit score, LTV
+- Used histograms, box plots, and scatter plots
+- Identified correlations between financial metrics and default status
 
+### 3. Feature Engineering + Encoding
+- One-hot encoded categorical variables
+- Prepared dataset for modeling
 
-## Exploratory Data Analysis
-Visualizations included:
-- Income distribution  
-- Loan amount distribution  
-- Credit score analysis  
-- LTV distribution  
-- Loan purpose vs default  
-- Region vs default  
-- Correlation heatmaps  
-- Scatter and box plots  
+### 4. Modeling
+- Trained Logistic Regression
+- Trained Decision Tree
+- Compared both using accuracy and confusion matrix
 
-These plots helped identify patterns and relationships that influence loan default behavior.
+## Results & Insights
+### 1. Model Performance
+- Logistic Regression Accuracy: 87%
+- Decision Tree Accuracy: 88%
 
+### Key Observations
+- Higher income and lower LTV are associated with lower default probability
+- Loan applicants with low credit scores or risky profiles default more
+- Decision Tree captured non-linear relationships better
+- Logistic Regression was interpretable but slightly less accurate
 
-##  Models Used
-### 1. Logistic Regression  
-Used as a baseline linear model for binary classification.
-
-### 2. Decision Tree Classifier  
-Captures non-linear relationships and interactions between variables.
-
-
-
-## Model Performance
-
-Model                Accuracy 
-
-Logistic Regression   **87%**  
-Decision Tree         **88%**  
-
-The **Decision Tree** slightly outperformed Logistic Regression, suggesting the data contains non-linear patterns that trees capture effectively.
-
-
-## Conclusion
-Both models performed well, achieving around **87–88% accuracy**.  
-The Decision Tree performed the best overall, while Logistic Regression provided interpretable baseline results.  
-The project demonstrates a complete ML pipeline including cleaning, EDA, encoding, model training, and evaluation.
-
-
-## Tools & Technologies
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
-- Scikit-Learn  
-
-
-## Contact
-For questions or improvements, feel free to reach out or open an issue.
+## Conclusion:
+Decision Tree performed best and highlighted how loan attributes (income, LTV, credit score) influence default risk.
